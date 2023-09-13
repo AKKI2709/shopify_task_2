@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nack Life</title>
+    <!-- Add your CSS and JavaScript links here -->
+    <link rel="stylesheet">
+    <style>
+        /* Reset some default styles */
+html, body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Style for the image carousel container */
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Style for individual carousel slides */
+.carousel-slide {
+    flex: 0 0 100%;
+    display: none;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* Style for the previous and next buttons */
+#prevButton,
+#nextButton {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 10px;
+}
+
+/* Style for active slide */
+.carousel-slide.active {
+    display: block;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-weight: bold;
+}
+
+/* Hero Section Styles */
+.hero {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #c0392b;
+}
+
+/* General Section Styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+.container h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.container p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Media Queries for Responsiveness (adjust as needed) */
+@media (max-width: 768px) {
+    .menu li {
+        margin-right: 10px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fnack.life%2F&psig=AOvVaw1VJf5hhe-AF8n1K446fSPc&ust=1694667568336000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPD71OXmpoEDFQAAAAAdAAAAABAE" alt="Image 1">
+        </div>
+        <div class="carousel-slide">
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fstumble.studio%2Fnack-life%2F&psig=AOvVaw1VJf5hhe-AF8n1K446fSPc&ust=1694667568336000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCPD71OXmpoEDFQAAAAAdAAAAABAJ" alt="Image 2">
+        </div>
+        <div class="carousel-slide">
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fnackliving.com%2F&psig=AOvVaw1VJf5hhe-AF8n1K446fSPc&ust=1694667568336000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCPD71OXmpoEDFQAAAAAdAAAAABAX" alt="Image 3">
+        </div>
+    </div>
+
+    <button id="prevButton">Previous</button>
+    <button id="nextButton">Next</button>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">Nack Life</a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero">
+            <h1>Welcome to Nack Life</h1>
+            <p>Your Source for Inspiration and Creativity</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget augue velit.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service">
+                <h3>Service 1</h3>
+                <p>Description of Service 1.</p>
+            </div>
+            <div class="service">
+                <h3>Service 2</h3>
+                <p>Description of Service 2.</p>
+            </div>
+            <div class="service">
+                <h3>Service 3</h3>
+                <p>Description of Service 3.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>Our Portfolio</h2>
+            <!-- Add your portfolio items here -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Contact information and a contact form go here.</p>
+        </div>
+    </section>
+
+    
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Nack Life. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+
+        function showSlide(n) {
+            if (n < 0) {
+                slideIndex = slides.length - 1;
+            } else if (n >= slides.length) {
+                slideIndex = 0;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+
+            slides[slideIndex].style.display = 'block';
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            showSlide(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex--;
+            showSlide(slideIndex);
+        }
+
+        document.getElementById('prevButton').addEventListener('click', prevSlide);
+        document.getElementById('nextButton').addEventListener('click', nextSlide);
+
+        showSlide(slideIndex);
+    </script>
+</body>
+</html>
